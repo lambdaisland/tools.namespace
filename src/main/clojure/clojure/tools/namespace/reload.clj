@@ -9,8 +9,8 @@
 (ns ^{:author "Stuart Sierra"
       :doc "Force reloading namespaces on demand or through a
       dependency tracker"}
-  clojure.tools.namespace.reload
-  (:require [clojure.tools.namespace.track :as track]))
+  lambdaisland.tools.namespace.reload
+  (:require [lambdaisland.tools.namespace.track :as track]))
 
 (defn remove-lib
   "Remove lib's namespace and remove lib from the set of loaded libs."

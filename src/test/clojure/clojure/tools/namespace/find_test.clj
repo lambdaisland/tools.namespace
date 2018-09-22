@@ -1,7 +1,7 @@
-(ns clojure.tools.namespace.find-test
+(ns lambdaisland.tools.namespace.find-test
   (:require [clojure.test :refer [deftest is]]
-            [clojure.tools.namespace.test-helpers :as help]
-            [clojure.tools.namespace.find :as find])
+            [lambdaisland.tools.namespace.test-helpers :as help]
+            [lambdaisland.tools.namespace.find :as find])
   (:import (java.io File)))
 
 (deftest t-find-clj-and-cljc-files

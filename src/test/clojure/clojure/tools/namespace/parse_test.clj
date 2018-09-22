@@ -1,6 +1,6 @@
-(ns clojure.tools.namespace.parse-test
+(ns lambdaisland.tools.namespace.parse-test
   (:use [clojure.test :only (deftest is)]
-        [clojure.tools.namespace.parse :only (deps-from-ns-decl
+        [lambdaisland.tools.namespace.parse :only (deps-from-ns-decl
                                               read-ns-decl)]))
 
 (def ns-decl-prefix-list

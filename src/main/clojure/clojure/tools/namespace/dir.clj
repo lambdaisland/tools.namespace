@@ -9,10 +9,10 @@
 (ns ^{:author "Stuart Sierra"
       :doc "Track namespace dependencies and changes by monitoring
   file-modification timestamps"}
-  clojure.tools.namespace.dir
-  (:require [clojure.tools.namespace.file :as file]
-            [clojure.tools.namespace.find :as find]
-            [clojure.tools.namespace.track :as track]
+  lambdaisland.tools.namespace.dir
+  (:require [lambdaisland.tools.namespace.file :as file]
+            [lambdaisland.tools.namespace.find :as find]
+            [lambdaisland.tools.namespace.track :as track]
             [clojure.java.classpath :refer [classpath-directories]]
             [clojure.java.io :as io]
             [clojure.set :as set]
@@ -52,7 +52,7 @@
   Optional third argument is map of options:
 
     :platform  Either clj (default) or cljs, both defined in
-               clojure.tools.namespace.find, controls reader options for 
+               lambdaisland.tools.namespace.find, controls reader options for 
                parsing files.
 
     :add-all?  If true, assumes all extant files are modified regardless
@@ -79,7 +79,7 @@
   Optional third argument is map of options:
 
     :platform  Either clj (default) or cljs, both defined in 
-               clojure.tools.namespace.find, controls file extensions 
+               lambdaisland.tools.namespace.find, controls file extensions 
                and reader options.
 
     :add-all?  If true, assumes all extant files are modified regardless

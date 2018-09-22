@@ -12,7 +12,7 @@
   other namespaces"
    :deprecated "0.2.1"
    :added "0.1.0"}
- clojure.tools.namespace
+ lambdaisland.tools.namespace
  (:require [clojure.java.io :as io])
  (:import (java.io File FileReader BufferedReader PushbackReader
                    InputStreamReader)
@@ -22,7 +22,7 @@
 ;;; Finding namespaces in a directory tree
 
 (defn clojure-source-file?
-  "DEPRECATED; moved to clojure.tools.namespace.file
+  "DEPRECATED; moved to lambdaisland.tools.namespace.file
 
   Returns true if file is a normal file with a .clj or .cljc extension."
   {:deprecated "0.2.1"
@@ -34,7 +34,7 @@
          (.endsWith (.getName file) ".cljc"))))
 
 (defn find-clojure-sources-in-dir
-  "DEPRECATED; moved to clojure.tools.namespace.find
+  "DEPRECATED; moved to lambdaisland.tools.namespace.find
 
   Searches recursively under dir for Clojure source files (.clj, .cljc).
   Returns a sequence of File objects, in breadth-first sort order."
@@ -46,7 +46,7 @@
            (filter clojure-source-file? (file-seq dir))))
 
 (defn comment?
-  "DEPRECATED; moved to clojure.tools.namespace.parse
+  "DEPRECATED; moved to lambdaisland.tools.namespace.parse
 
   Returns true if form is a (comment ...)"
   {:deprecated "0.2.1"
@@ -55,7 +55,7 @@
   (and (list? form) (= 'comment (first form))))
 
 (defn ns-decl?
-  "DEPRECATED; moved to clojure.tools.namespace.parse
+  "DEPRECATED; moved to lambdaisland.tools.namespace.parse
 
   Returns true if form is a (ns ...) declaration."
   {:deprecated "0.2.1"
@@ -64,7 +64,7 @@
   (and (list? form) (= 'ns (first form))))
 
 (defn read-ns-decl
-  "DEPRECATED; moved to clojure.tools.namespace.parse
+  "DEPRECATED; moved to lambdaisland.tools.namespace.parse
 
   Attempts to read a (ns ...) declaration from rdr, and returns the
   unevaluated form.  Returns nil if read fails or if a ns declaration
@@ -82,7 +82,7 @@
        (catch Exception e nil)))
 
 (defn read-file-ns-decl
-  "DEPRECATED; moved to clojure.tools.namespace.file
+  "DEPRECATED; moved to lambdaisland.tools.namespace.file
 
   Attempts to read a (ns ...) declaration from file, and returns the
   unevaluated form.  Returns nil if read fails, or if the first form
@@ -94,7 +94,7 @@
     (read-ns-decl rdr)))
 
 (defn find-ns-decls-in-dir
-  "DEPRECATED; moved to clojure.tools.namespace.find
+  "DEPRECATED; moved to lambdaisland.tools.namespace.find
 
   Searches dir recursively for (ns ...) declarations in Clojure
   source files; returns the unevaluated ns declarations."
@@ -104,7 +104,7 @@
   (filter identity (map read-file-ns-decl (find-clojure-sources-in-dir dir))))
 
 (defn find-namespaces-in-dir
-  "DEPRECATED; moved to clojure.tools.namespace.find
+  "DEPRECATED; moved to lambdaisland.tools.namespace.find
 
   Searches dir recursively for (ns ...) declarations in Clojure
   source files; returns the symbol names of the declared namespaces."
@@ -152,7 +152,7 @@
 ;;; Finding namespaces in JAR files
 
 (defn clojure-sources-in-jar
-  "DEPRECATED; moved to clojure.tools.namespace.find
+  "DEPRECATED; moved to lambdaisland.tools.namespace.find
 
   Returns a sequence of filenames ending in .clj or .cljc found in the JAR file."
   {:deprecated "0.2.1"
@@ -162,7 +162,7 @@
           (filenames-in-jar jar-file)))
 
 (defn read-ns-decl-from-jarfile-entry
-  "DEPRECATED; moved to clojure.tools.namespace.find
+  "DEPRECATED; moved to lambdaisland.tools.namespace.find
 
   Attempts to read a (ns ...) declaration from the named entry in the
   JAR file, and returns the unevaluated form.  Returns nil if the read
@@ -177,7 +177,7 @@
     (read-ns-decl rdr)))
 
 (defn find-ns-decls-in-jarfile
-  "DEPRECATED; moved to clojure.tools.namespace.find
+  "DEPRECATED; moved to lambdaisland.tools.namespace.find
 
   Searches the JAR file for Clojure source files containing (ns ...)
   declarations; returns the unevaluated ns declarations."
@@ -189,7 +189,7 @@
                (clojure-sources-in-jar jarfile))))
 
 (defn find-namespaces-in-jarfile
-  "DEPRECATED; moved to clojure.tools.namespace.find
+  "DEPRECATED; moved to lambdaisland.tools.namespace.find
 
   Searches the JAR file for Clojure source files containing (ns ...)
   declarations.  Returns a sequence of the symbol names of the
@@ -202,7 +202,7 @@
 ;;; Finding namespaces anywhere on CLASSPATH
 
 (defn find-ns-decls-on-classpath
-  "DEPRECATED; use clojure.tools.namespace.find/find-ns-decls
+  "DEPRECATED; use lambdaisland.tools.namespace.find/find-ns-decls
   and clojure.java.classpath/classpath from
   http://github.com/clojure/java.classpath
 
@@ -217,7 +217,7 @@
    (mapcat find-ns-decls-in-jarfile (classpath-jarfiles))))
 
 (defn find-namespaces-on-classpath
-  "DEPRECATED; use clojure.tools.namespace.find/find-namespaces
+  "DEPRECATED; use lambdaisland.tools.namespace.find/find-namespaces
   and clojure.java.classpath/classpath from
   http://github.com/clojure/java.classpath
 

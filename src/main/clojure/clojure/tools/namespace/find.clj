@@ -9,12 +9,12 @@
 (ns 
   ^{:author "Stuart Sierra",
      :doc "Search for namespace declarations in directories and JAR files."} 
-  clojure.tools.namespace.find
+  lambdaisland.tools.namespace.find
   (:require [clojure.java.classpath :as classpath]
             [clojure.java.io :as io]
             [clojure.set :as set]
-            [clojure.tools.namespace.file :as file]
-            [clojure.tools.namespace.parse :as parse])
+            [lambdaisland.tools.namespace.file :as file]
+            [lambdaisland.tools.namespace.parse :as parse])
   (:import (java.io File FileReader BufferedReader PushbackReader
                     InputStreamReader)
            (java.util.jar JarFile JarEntry)))
@@ -54,7 +54,7 @@
   of File objects, in breadth-first sort order.
 
   Optional second argument is either clj (default) or cljs, both
-  defined in clojure.tools.namespace.find."
+  defined in lambdaisland.tools.namespace.find."
   {:added "0.3.0"}
   ([dir]
    (find-sources-in-dir dir nil))
@@ -79,7 +79,7 @@
   source files; returns the unevaluated ns declarations.
 
   Optional second argument platform is either clj (default) or cljs,
-  both defined in clojure.tools.namespace.find."
+  both defined in lambdaisland.tools.namespace.find."
   {:added "0.2.0"}
   ([dir] (find-ns-decls-in-dir dir nil))
   ([dir platform]
@@ -92,7 +92,7 @@
   source files; returns the symbol names of the declared namespaces.
 
   Optional second argument platform is either clj (default) or cljs,
-  both defined in clojure.tools.namespace.find."
+  both defined in lambdaisland.tools.namespace.find."
   {:added "0.3.0"}
   ([dir] (find-namespaces-in-dir dir nil))
   ([dir platform]
@@ -108,7 +108,7 @@
   "Returns a sequence of source file names found in the JAR file.
 
   Optional second argument platform is either clj (default) or cljs,
-  both defined in clojure.tools.namespace.find."
+  both defined in lambdaisland.tools.namespace.find."
   {:added "0.3.0"}
   ([jar-file]
    (sources-in-jar jar-file nil))
@@ -133,7 +133,7 @@
   fails due to invalid syntax or if a ns declaration cannot be found.
 
   Optional third argument platform is either clj (default) or cljs,
-  both defined in clojure.tools.namespace.find."
+  both defined in lambdaisland.tools.namespace.find."
   ([jarfile entry-name]
    (read-ns-decl-from-jarfile-entry jarfile entry-name nil))
   ([^JarFile jarfile ^String entry-name platform]
@@ -149,7 +149,7 @@
   declarations; returns the unevaluated ns declarations.
 
   Optional second argument platform is either clj (default) or cljs,
-  both defined in clojure.tools.namespace.find."
+  both defined in lambdaisland.tools.namespace.find."
   ([jarfile]
    (find-ns-decls-in-jarfile jarfile nil))
   ([^JarFile jarfile platform]
@@ -162,7 +162,7 @@
   declared namespaces.
 
   Optional second argument platform is either clj (default) or cljs,
-  both defined in clojure.tools.namespace.find."
+  both defined in lambdaisland.tools.namespace.find."
   ([jarfile]
    (find-namespaces-in-jarfile jarfile nil))
   ([^JarFile jarfile platform]
@@ -179,7 +179,7 @@
   classpath.
 
   Optional second argument platform is either clj (default) or cljs,
-  both defined in clojure.tools.namespace.find."
+  both defined in lambdaisland.tools.namespace.find."
   ([files]
    (find-ns-decls files nil))
   ([files platform]
@@ -198,7 +198,7 @@
   classpath.
 
   Optional second argument platform is either clj (default) or cljs,
-  both defined in clojure.tools.namespace.find."
+  both defined in lambdaisland.tools.namespace.find."
   ([files]
    (find-namespaces files nil))
   ([files platform]

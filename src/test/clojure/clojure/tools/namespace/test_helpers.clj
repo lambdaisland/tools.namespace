@@ -1,4 +1,4 @@
-(ns clojure.tools.namespace.test-helpers
+(ns lambdaisland.tools.namespace.test-helpers
   "Utilities to help with testing files and namespaces."
   (:require [clojure.java.io :as io]
             [clojure.string :as string])

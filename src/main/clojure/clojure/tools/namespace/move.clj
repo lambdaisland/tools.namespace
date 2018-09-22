@@ -14,7 +14,7 @@
   WARNING: This code is ALPHA and subject to change. It also modifies
   and deletes your source files! Make sure you have a backup or
   version control."}
-  clojure.tools.namespace.move
+  lambdaisland.tools.namespace.move
   (:require [clojure.string :as str]
             [clojure.java.io :as io])
   (:import (java.io File)))

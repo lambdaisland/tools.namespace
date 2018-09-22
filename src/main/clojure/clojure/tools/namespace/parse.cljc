@@ -9,7 +9,7 @@
 (ns ^{:author "Stuart Sierra"
       :doc "Parse Clojure namespace (ns) declarations and extract
   dependencies."}
-  clojure.tools.namespace.parse
+  lambdaisland.tools.namespace.parse
   (:require #?(:clj [clojure.tools.reader :as reader]
                :cljs [cljs.tools.reader :as reader])
             [clojure.set :as set]))

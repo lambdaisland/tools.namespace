@@ -8,7 +8,7 @@
 
 (ns ^{:author "Stuart Sierra"
       :doc "Bidirectional graphs of dependencies and dependent objects."}
-  clojure.tools.namespace.dependency
+  lambdaisland.tools.namespace.dependency
   (:require [clojure.set :as set]))
 
 (defprotocol DependencyGraph

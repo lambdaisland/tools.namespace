@@ -8,11 +8,11 @@
 
 (ns ^{:author "Stuart Sierra"
       :doc "REPL utilities for working with namespaces"}
-  clojure.tools.namespace.repl
-  (:require [clojure.tools.namespace.track :as track]
-            [clojure.tools.namespace.dir :as dir]
-            [clojure.tools.namespace.find :as find]
-            [clojure.tools.namespace.reload :as reload]))
+  lambdaisland.tools.namespace.repl
+  (:require [lambdaisland.tools.namespace.track :as track]
+            [lambdaisland.tools.namespace.dir :as dir]
+            [lambdaisland.tools.namespace.find :as find]
+            [lambdaisland.tools.namespace.reload :as reload]))
 
 (defonce refresh-tracker (track/tracker))
 

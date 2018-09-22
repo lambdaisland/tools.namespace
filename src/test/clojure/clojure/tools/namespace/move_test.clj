@@ -1,8 +1,8 @@
-(ns clojure.tools.namespace.move-test
+(ns lambdaisland.tools.namespace.move-test
   (:require [clojure.java.io :as io]
             [clojure.test :refer [deftest is]]
-            [clojure.tools.namespace.move :refer [move-ns]]
-            [clojure.tools.namespace.test-helpers :as help])
+            [lambdaisland.tools.namespace.move :refer [move-ns]]
+            [lambdaisland.tools.namespace.test-helpers :as help])
   (:import (java.io File)))
 
 (defn- create-file-one [dir]

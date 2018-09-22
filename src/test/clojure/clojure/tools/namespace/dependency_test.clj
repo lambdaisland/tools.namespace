@@ -1,6 +1,6 @@
-(ns clojure.tools.namespace.dependency-test
+(ns lambdaisland.tools.namespace.dependency-test
   (:use clojure.test
-        clojure.tools.namespace.dependency))
+        lambdaisland.tools.namespace.dependency))
 
 ;; building a graph like:
 ;;

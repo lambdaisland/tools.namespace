@@ -8,10 +8,10 @@
 
 (ns ^{:author "Stuart Sierra"
       :doc "Read and track namespace information from files"}
-  clojure.tools.namespace.file
+  lambdaisland.tools.namespace.file
   (:require [clojure.java.io :as io]
-            [clojure.tools.namespace.parse :as parse]
-            [clojure.tools.namespace.track :as track])
+            [lambdaisland.tools.namespace.parse :as parse]
+            [lambdaisland.tools.namespace.track :as track])
   (:import (java.io PushbackReader)))
 
 (defn read-file-ns-decl

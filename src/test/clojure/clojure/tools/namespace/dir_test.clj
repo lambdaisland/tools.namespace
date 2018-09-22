@@ -1,7 +1,7 @@
-(ns clojure.tools.namespace.dir-test
+(ns lambdaisland.tools.namespace.dir-test
   (:require [clojure.test :refer [deftest is]]
-            [clojure.tools.namespace.test-helpers :as help]
-            [clojure.tools.namespace.dir :as dir])
+            [lambdaisland.tools.namespace.test-helpers :as help]
+            [lambdaisland.tools.namespace.dir :as dir])
   (:import
    (java.io File)))
 
