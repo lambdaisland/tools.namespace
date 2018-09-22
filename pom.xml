@@ -46,6 +46,8 @@
   <developers>
     <developer>
         <name>Stuart Sierra</name>
+    </developer>
+    <developer>
         <name>Arne Brasseur</name>
     </developer>
   </developers>
@@ -58,14 +60,11 @@
   </scm>
 
   <build>
-      <sourceDirectory>src</sourceDirectory>
+      <sourceDirectory>src/main/clojure</sourceDirectory>
 
       <resources>
           <resource>
-              <directory>src</directory>
-          </resource>
-          <resource>
-              <directory>resources</directory>
+              <directory>src/main/clojure</directory>
           </resource>
       </resources>
 
