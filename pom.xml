@@ -6,7 +6,7 @@
 
   <name>tools.namespace</name>
   <description>Friendly fork of org.clojure/tools.namespace</description>
-  <url>https://github.com/lambdaisland/kaocha</url>
+  <url>https://github.com/lambdaisland/tools.namespace</url>
 
   <organization>
       <name>Lambda Island</name>
