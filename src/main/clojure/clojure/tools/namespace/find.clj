@@ -6,10 +6,10 @@
 ;; agreeing to be bound by the terms of this license. You must not
 ;; remove this notice, or any other, from this software.
 
-(ns 
-  ^{:author "Stuart Sierra",
-     :doc "Search for namespace declarations in directories and JAR files."} 
-  lambdaisland.tools.namespace.find
+(ns
+    ^{:author "Stuart Sierra",
+      :doc "Search for namespace declarations in directories and JAR files."}
+    lambdaisland.tools.namespace.find
   (:require [clojure.java.classpath :as classpath]
             [clojure.java.io :as io]
             [clojure.set :as set]
@@ -64,16 +64,6 @@
           (filter #(file/file-with-extension? % extensions))
           sort-files-breadth-first))))
 
-(defn find-clojure-sources-in-dir
-  "DEPRECATED: replaced by find-sources-in-dir
-
-  Searches recursively under dir for Clojure source files (.clj, .cljc).
-  Returns a sequence of File objects, in breadth-first sort order."
-  {:added "0.2.0"
-   :deprecated "0.3.0"}
-  [^File dir]
-  (find-sources-in-dir dir clj))
-
 (defn find-ns-decls-in-dir
   "Searches dir recursively for (ns ...) declarations in Clojure
   source files; returns the unevaluated ns declarations.
@@ -116,16 +106,6 @@
    (let [{:keys [extensions]} (or platform clj)]
      (filter #(ends-with-extension % extensions)
              (classpath/filenames-in-jar jar-file)))))
-
-(defn clojure-sources-in-jar
-  "DEPRECATED: replaced by sources-in-jar
-
-  Returns a sequence of filenames ending in .clj or .cljc found in the
-  JAR file."
-  {:added "0.2.0"
-   :deprecated "0.3.0"}
-  [jar-file]
-  (sources-in-jar jar-file clj))
 
 (defn read-ns-decl-from-jarfile-entry
   "Attempts to read a (ns ...) declaration from the named entry in the

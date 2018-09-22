@@ -52,7 +52,7 @@
   Optional third argument is map of options:
 
     :platform  Either clj (default) or cljs, both defined in
-               lambdaisland.tools.namespace.find, controls reader options for 
+               lambdaisland.tools.namespace.find, controls reader options for
                parsing files.
 
     :add-all?  If true, assumes all extant files are modified regardless
@@ -78,8 +78,8 @@
 
   Optional third argument is map of options:
 
-    :platform  Either clj (default) or cljs, both defined in 
-               lambdaisland.tools.namespace.find, controls file extensions 
+    :platform  Either clj (default) or cljs, both defined in
+               lambdaisland.tools.namespace.find, controls file extensions
                and reader options.
 
     :add-all?  If true, assumes all extant files are modified regardless
@@ -90,27 +90,3 @@
   ([tracker dirs {:keys [platform add-all?] :as options}]
    (let [ds (or (seq dirs) (classpath-directories))]
      (scan-files tracker (find-files ds platform) options))))
-
-(defn scan
-  "DEPRECATED: replaced by scan-dirs.
-
-  Scans directories for Clojure (.clj, .cljc) source files which have
-  changed since the last time 'scan' was run; update the dependency
-  tracker with new/changed/deleted files.
-
-  If no dirs given, defaults to all directories on the classpath."
-  {:added "0.2.0"
-   :deprecated "0.3.0"}
-  [tracker & dirs]
-  (scan-dirs tracker dirs {:platform find/clj}))
-
-(defn scan-all
-  "DEPRECATED: replaced by scan-dirs.
-
-  Scans directories for all Clojure source files and updates the
-  dependency tracker to reload files. If no dirs given, defaults to
-  all directories on the classpath."
-  {:added "0.2.0"
-   :deprecated "0.3.0"}
-  [tracker & dirs]
-  (scan-dirs tracker dirs {:platform find/clj :add-all? true}))
