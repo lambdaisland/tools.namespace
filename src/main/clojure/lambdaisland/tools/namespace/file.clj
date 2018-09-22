@@ -60,13 +60,16 @@
 
 (defn- files-and-deps [files read-opts]
   (reduce (fn [m file]
-            (if-let [decl (read-file-ns-decl file read-opts)]
-              (let [deps (parse/deps-from-ns-decl decl)
-                    name (parse/name-from-ns-decl decl)]
-                (-> m
-                    (assoc-in [:depmap name] deps)
-                    (assoc-in [:filemap file] name)))
-              m))
+            (try
+              (if-let [decl (read-file-ns-decl file read-opts)]
+                (let [deps (parse/deps-from-ns-decl decl)
+                      name (parse/name-from-ns-decl decl)]
+                  (-> m
+                      (assoc-in [:depmap name] deps)
+                      (assoc-in [:filemap file] name)))
+                m)
+              (catch Exception e
+                (assoc-in m [:load-error file] e))))
           {} files))
 
 (def ^:private merge-map (fnil merge {}))
@@ -78,9 +81,10 @@
   ([tracker files]
    (add-files tracker files nil))
   ([tracker files read-opts]
-   (let [{:keys [depmap filemap]} (files-and-deps files read-opts)]
+   (let [{:keys [depmap filemap load-error]} (files-and-deps files read-opts)]
      (-> tracker
          (track/add depmap)
+         (update-in [::load-error] into load-error)
          (update-in [::filemap] merge-map filemap)))))
 
 (defn remove-files
@@ -90,4 +94,3 @@
   (-> tracker
       (track/remove (keep (::filemap tracker {}) files))
       (update-in [::filemap] #(apply dissoc % files))))
-

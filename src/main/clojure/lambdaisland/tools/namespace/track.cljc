@@ -136,6 +136,10 @@
    ;; represent.
    :lambdaisland.tools.namespace.file/filemap {}
 
+   ;; Added by lambdaisland.tools.namespace.file: Source files which
+   ;; failed to load/parse. Map from file (java.io.File) to Exception.
+   :lambdaisland.tools.namespace.file/load-error {}
+
    ;; Added by lambdaisland.tools.namespace.dir: Set of source files
    ;; (java.io.File) which have been seen by this dependency tracker;
    ;; used to determine when files have been deleted.

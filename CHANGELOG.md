@@ -1,5 +1,11 @@
-# Change Log for tools.namespace
+# Unreleased
 
+## Changed
+
+- Forked from `clojure.tools.namespace` as `lambdaisland.tools.namespace`
+- Track load errors instead of bailing out
+
+# Changelog for clojure.tools.namespace
 
 ## 0.3.x series
 
