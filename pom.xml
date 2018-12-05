@@ -1,31 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>lambdaisland</groupId>
   <artifactId>tools.namespace</artifactId>
   <version>0.0-228</version>
-
   <name>tools.namespace</name>
   <description>Friendly fork of org.clojure/tools.namespace</description>
   <url>https://github.com/lambdaisland/tools.namespace</url>
-
   <organization>
       <name>Lambda Island</name>
       <url>https://lambdaisland.com</url>
   </organization>
-
   <licenses>
       <license>
           <name>Eclipse Public License 1.0</name>
           <url>https://www.eclipse.org/legal/epl-v10.html</url>
       </license>
   </licenses>
-
   <dependencies>
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>clojure</artifactId>
       <version>1.9.0</version>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.clojure</groupId>
@@ -38,11 +34,9 @@
       <version>1.3.2</version>
     </dependency>
   </dependencies>
-
   <properties>
     <clojure.warnOnReflection>true</clojure.warnOnReflection>
   </properties>
-
   <developers>
     <developer>
         <name>Stuart Sierra</name>
@@ -51,23 +45,19 @@
         <name>Arne Brasseur</name>
     </developer>
   </developers>
-
   <scm>
     <connection>scm:git:git@github.com:lambdaisland/tools.namespace.git</connection>
     <developerConnection>scm:git:git@github.com:lambdaisland/tools.namespace.git</developerConnection>
     <url>git@github.com:lambdaisland/tools.namespace.git</url>
     <tag>a5e3ae55f6cff05a1163e781e7971c61583a6841</tag>
   </scm>
-
   <build>
       <sourceDirectory>src/main/clojure</sourceDirectory>
-
       <resources>
           <resource>
               <directory>src/main/clojure</directory>
           </resource>
       </resources>
-
       <plugins>
           <plugin>
               <groupId>org.apache.maven.plugins</groupId>
@@ -83,14 +73,12 @@
           </plugin>
       </plugins>
   </build>
-
   <repositories>
-      <repository>
-          <id>clojars</id>
-          <url>https://clojars.org/repo</url>
-      </repository>
+    <repository>
+      <id>clojars</id>
+      <url>https://repo.clojars.org/</url>
+    </repository>
   </repositories>
-
   <distributionManagement>
       <repository>
           <id>clojars</id>
@@ -98,5 +86,4 @@
           <url>https://clojars.org/repo</url>
       </repository>
   </distributionManagement>
-
 </project>
