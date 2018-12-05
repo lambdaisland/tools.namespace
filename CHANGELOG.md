@@ -1,10 +1,8 @@
 # Unreleased
 
-## Added
-
-## Fixed
-
 ## Changed
+
+- Bumped dependencies of java.classpath and tools.reader
 
 # 0.0-228 (2018-09-22 / 88d4488)
 
