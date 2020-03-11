@@ -8,14 +8,14 @@
   <description>Friendly fork of org.clojure/tools.namespace</description>
   <url>https://github.com/lambdaisland/tools.namespace</url>
   <organization>
-      <name>Lambda Island</name>
-      <url>https://lambdaisland.com</url>
+    <name>Lambda Island</name>
+    <url>https://lambdaisland.com</url>
   </organization>
   <licenses>
-      <license>
-          <name>Eclipse Public License 1.0</name>
-          <url>https://www.eclipse.org/legal/epl-v10.html</url>
-      </license>
+    <license>
+      <name>Eclipse Public License 1.0</name>
+      <url>https://www.eclipse.org/legal/epl-v10.html</url>
+    </license>
   </licenses>
   <dependencies>
     <dependency>
@@ -39,10 +39,10 @@
   </properties>
   <developers>
     <developer>
-        <name>Stuart Sierra</name>
+      <name>Stuart Sierra</name>
     </developer>
     <developer>
-        <name>Arne Brasseur</name>
+      <name>Arne Brasseur</name>
     </developer>
   </developers>
   <scm>
@@ -52,26 +52,26 @@
     <tag>d0dfce59b9dd4cad63a9cb113d1aba6bd859c814</tag>
   </scm>
   <build>
-      <sourceDirectory>src/main/clojure</sourceDirectory>
-      <resources>
-          <resource>
-              <directory>src/main/clojure</directory>
-          </resource>
-      </resources>
-      <plugins>
-          <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-jar-plugin</artifactId>
-              <version>2.4</version>
-              <configuration>
-                  <archive>
-                      <manifestEntries>
-                          <Git-Revision>d0dfce59b9dd4cad63a9cb113d1aba6bd859c814</Git-Revision>
-                      </manifestEntries>
-                  </archive>
-              </configuration>
-          </plugin>
-      </plugins>
+    <sourceDirectory>src/main/clojure</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src/main/clojure</directory>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Git-Revision>d0dfce59b9dd4cad63a9cb113d1aba6bd859c814</Git-Revision>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
   <repositories>
     <repository>
@@ -80,10 +80,10 @@
     </repository>
   </repositories>
   <distributionManagement>
-      <repository>
-          <id>clojars</id>
-          <name>Clojars repository</name>
-          <url>https://clojars.org/repo</url>
-      </repository>
+    <repository>
+      <id>clojars</id>
+      <name>Clojars repository</name>
+      <url>https://clojars.org/repo</url>
+    </repository>
   </distributionManagement>
 </project>
