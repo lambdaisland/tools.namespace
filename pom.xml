@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>lambdaisland</groupId>
   <artifactId>tools.namespace</artifactId>
-  <version>0.0-234</version>
+  <version>0.0-237</version>
   <name>tools.namespace</name>
   <description>Friendly fork of org.clojure/tools.namespace</description>
   <url>https://github.com/lambdaisland/tools.namespace</url>
@@ -49,7 +49,7 @@
     <connection>scm:git:git@github.com:lambdaisland/tools.namespace.git</connection>
     <developerConnection>scm:git:git@github.com:lambdaisland/tools.namespace.git</developerConnection>
     <url>git@github.com:lambdaisland/tools.namespace.git</url>
-    <tag>d0dfce59b9dd4cad63a9cb113d1aba6bd859c814</tag>
+    <tag>a441fd9d9c26cf4e7f95400165f035e5e55ab627</tag>
   </scm>
   <build>
     <sourceDirectory>src/main/clojure</sourceDirectory>
@@ -66,7 +66,7 @@
         <configuration>
           <archive>
             <manifestEntries>
-              <Git-Revision>d0dfce59b9dd4cad63a9cb113d1aba6bd859c814</Git-Revision>
+              <Git-Revision>a441fd9d9c26cf4e7f95400165f035e5e55ab627</Git-Revision>
             </manifestEntries>
           </archive>
         </configuration>
