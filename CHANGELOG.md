@@ -1,10 +1,10 @@
 # Unreleased
 
-## Added
-
-## Fixed
-
 ## Changed
+
+- `ctn-find/find-namespaces-in-dir` no longer swallows exceptions when the ns
+  form can't be read, instead it returns a triplet of
+  [::ctn-find/reader-exception io-file exception]
 
 # 0.0-234 (2018-12-05 / 039c9b8)
 

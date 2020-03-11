@@ -33,14 +33,14 @@
   {:read-opts parse/cljs-read-opts
    :extensions file/clojurescript-extensions})
 
-(defmacro ^:private ignore-reader-exception
+(defmacro ^:private detect-reader-exception
   "If body throws an exception caused by a syntax error (from
   tools.reader), returns nil. Rethrows other exceptions."
-  [& body]
+  [file & body]
   `(try ~@body
         (catch Exception e#
           (if (= :reader-exception (:type (ex-data e#)))
-            nil
+            [::reader-exception ~file e#]
             (throw e#)))))
 
 ;;; Finding namespaces in a directory tree
@@ -73,9 +73,19 @@
   {:added "0.2.0"}
   ([dir] (find-ns-decls-in-dir dir nil))
   ([dir platform]
-   (keep #(ignore-reader-exception
+   (keep #(detect-reader-exception
+           %
            (file/read-file-ns-decl % (:read-opts platform)))
          (find-sources-in-dir dir platform))))
+
+(defn reader-exception? [sym-or-vec]
+  (and (vector? sym-or-vec)
+       (= ::reader-exception (first sym-or-vec))))
+
+(defn maybe-parse-name-from-ns-decl [ns-form]
+  (if (reader-exception? ns-form)
+    ns-form
+    (parse/name-from-ns-decl ns-form)))
 
 (defn find-namespaces-in-dir
   "Searches dir recursively for (ns ...) declarations in Clojure
@@ -86,7 +96,7 @@
   {:added "0.3.0"}
   ([dir] (find-namespaces-in-dir dir nil))
   ([dir platform]
-   (map parse/name-from-ns-decl (find-ns-decls-in-dir dir platform))))
+   (map maybe-parse-name-from-ns-decl (find-ns-decls-in-dir dir platform))))
 
 ;;; Finding namespaces in JAR files
 
@@ -121,7 +131,7 @@
      (with-open [rdr (PushbackReader.
                       (io/reader
                        (.getInputStream jarfile (.getEntry jarfile entry-name))))]
-       (ignore-reader-exception
+       (detect-reader-exception
         (parse/read-ns-decl rdr read-opts))))))
 
 (defn find-ns-decls-in-jarfile
@@ -146,8 +156,7 @@
   ([jarfile]
    (find-namespaces-in-jarfile jarfile nil))
   ([^JarFile jarfile platform]
-   (map parse/name-from-ns-decl (find-ns-decls-in-jarfile jarfile platform))))
-
+   (map maybe-parse-name-from-ns-decl (find-ns-decls-in-jarfile jarfile platform))))
 
 ;;; Finding namespaces
 
